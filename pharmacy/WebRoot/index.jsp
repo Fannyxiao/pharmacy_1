@@ -571,7 +571,7 @@ $(function() {
 	window.onresize=function(){obj.style.top=(document.body.scrollTop||document.documentElement.scrollTop)+n+'px'};
 })();
 </script>-->
-  <div>
+  <div style="display:none;">
     <a href="User/User-registerInput">注册</a>
     <a href="User/User-loginInput">登陆</a>
     <a

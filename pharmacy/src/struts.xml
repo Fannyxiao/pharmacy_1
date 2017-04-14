@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	 <constant name="struts.devMode" value="true" />
+	 <constant name="struts.il8n.encoding" value="utf-8" />
+	 <package name="User" namespace="/User" extends="struts-default" >	
+	   	<action name="*-*" class="com.pharmacy.action.{1}Action" method="{2}">
+	       	<result>/User/{1}-{2}.jsp</result>
+	       	<result name="input">/User/{1}-{2}.jsp</result>
+	       	<result name="NOTEXIST">/User/loginInputnotexist.jsp</result>
+	       	<result name="ERRORPASSWORD">/User/loginInputerrorpassword.jsp</result>
+	       	<result name="EXIST">/User/registerInputexist.jsp</result>
+	       	<result name="INDEX">/index.jsp</result>
+	    </action>
+	 </package>
+	 <package name="Admin" namespace="/Admin" extends="struts-default" >	
+	   	<action name="*-*" class="com.pharmacy.action.{1}Action" method="{2}">
+	       	<result>/Admin/{1}-{2}.jsp</result>
+	       	<result name="INDEX">/Admin/Admin-index.jsp</result>
+	       	<result name="ADMINREPLY">/Admin/Admin-adminreply.jsp</result>
+	    </action>
+	 </package>
+
+	<package name="Drug" namespace="/Drug" extends="struts-default">
+		<action name="*-*" class="com.pharmacy.action.{1}Action" method="{2}">
+			<result>/Drug/{1}-{2}.jsp</result>
+			<result name="INDEX">/Admin/Admin-index.jsp</result>
+			<result name="DRUGLIST">/Drug/Drug-druglist.jsp</result>
+			<result name="INDEXSHOU">/index.jsp</result>
+		</action>
+	</package>
+	
+	<package name="Index" namespace="/Index" extends="struts-default">
+		<action name="*-*" class="com.pharmacy.action.UserDrugAction" method="{2}">
+			<result>/Index/{1}-{2}.jsp</result>
+			<result name="detail">/Index/Index-drugdetail.jsp</result>
+		</action>
+	</package>
+	<package name="Car" namespace="/Car" extends="struts-default">
+		<action name="*-*" class="com.pharmacy.action.CarAction" method="{2}">
+			<result>/Car/{1}-{2}.jsp</result>
+			<result name="INDEX">/index.jsp</result>
+			<result name="USERINDEX">/User/User-index.jsp</result>
+			<result name="MYINDEXLIST">/User/User-index.jsp</result>
+		</action>
+	</package>
+	<package name="Order" namespace="/Order" extends="struts-default">
+		<action name="*-*" class="com.pharmacy.action.{1}Action" method="{2}">
+			<result>/Order/{1}-{2}.jsp</result>
+			<result name="INDEX">/index.jsp</result>
+			<result name="INPUT">/Order/Order-addorder.jsp</result>
+			<result name="ERROR">/Order/Order-error.jsp</result>
+			<result name="ADMINLIST">/Order/Order-adminorderlist.jsp</result>
+			<result name="USERLIST">/Order/Order-myorderlist.jsp</result>
+		</action>
+	</package>
+<!-- 
+	<package name="Ordership" namespace="/Ordership" extends="struts-default">
+		<action name="*-*" class="com.share.action.{1}Action" method="{2}">
+			<result>/Ordership/{1}-{2}.jsp</result>
+			<result name="input">/Ordership/{1}-{2}.jsp</result>
+			<result name="LIST">/Ordership/Ordership-ordershiplist.jsp</result>
+		</action>
+	</package>
+
+	<package name="Bbstopic" namespace="/Bbstopic" extends="struts-default">
+		<action name="*-*" class="com.share.action.{1}Action" method="{2}">
+			<result>/Bbstopic/{1}-{2}.jsp</result>
+			<result name="input">/Bbstopic/{1}-{2}.jsp</result>
+			<result name="list">/Bbstopic/Bbstopic-bbstopiclist.jsp</result>
+			<result name="detail">/Bbstopic/Bbstopic-bbstopicdetail.jsp</result>
+		</action>
+	</package>  
+	 -->
+</struts>
